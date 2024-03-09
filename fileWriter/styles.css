@@ -1,0 +1,73 @@
+/* styles.css */
+.file-tree {
+  user-select: none;
+  border-right: 1px solid #ccc; /* Add a border on the right side */
+  overflow: auto; /* Add vertical scroll */
+  color: white;
+  height: 90vh; /* Full viewport height */
+  font-size: 12px;
+  margin: 0;
+  margin-left: -40px;
+}
+#fileExplorer {
+  width: 200px;
+}
+/* Update the CSS to position the file tree and editor */
+
+/* Set up a flex container for the layout */
+.container {
+  display: flex;
+  height: 90vh; /* Full viewport height */
+  background-color: #383838cb;
+  border: 2px solid rgba(7, 7, 7, 0.796);
+}
+
+/* Style the editor */
+#editor {
+  flex: 2; /* Occupy twice the space of the file tree */
+  overflow: auto; /* Add overflow scrolling */
+  background-color: #383838cb;
+  color: #ffffffd0;
+}
+
+.file-tree .folder:before {
+  content: "▸";
+}
+
+.file-tree ul {
+  display: none; /* Hide nested ul elements by default */
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+}
+.file-tree span {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.file-tree li.open > ul {
+  display: block; /* Show nested ul elements when parent li has 'open' class */
+  padding: 0;
+}
+.file-tree span:hover {
+  background-color: lightgray; /* Add hover effect */
+}
+
+/* Add styles for selected folders and files */
+.folder.selected,
+.file.selected {
+  background-color: rgb(
+    143,
+    143,
+    143
+  ); /* Change background color for selected items */
+  color: white; /* Change text color for selected items */
+}
+
+ul .main {
+  background-color: black;
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+}
